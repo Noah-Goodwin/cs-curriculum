@@ -13,7 +13,7 @@ public class OverworldMovement : MonoBehaviour
     
     void Start()
     {
-        WalkingSpeed = 5f;
+        WalkingSpeed = 4f;
     }
 
     // Update is called once per frame
