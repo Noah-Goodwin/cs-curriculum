@@ -11,11 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private float YDirection;
     private float YVector;
     public bool Overworld;
+
     
     void Start()
     { 
         WalkingSpeed = 5f;
     }
+
 
     // Update is called once per frame
     void Update()

@@ -30,7 +30,16 @@ public class HealthCode : MonoBehaviour
             Destroy(other.gameObject);
 
         }
+        
+        if (other.gameObject.CompareTag("IPotion"))
+        {
+            sssssss
+            Destroy(other.gameObject);
+
+        }
     }
+    
+
 
     private void Update()
     {
@@ -70,6 +79,7 @@ public class HealthCode : MonoBehaviour
     void Death()
     {
         hud.coins  = 0;
+        hud.health = 10;
         SceneManager.LoadScene("Start", LoadSceneMode.Single);
     }
     
