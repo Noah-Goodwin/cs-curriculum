@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class HealthCode : MonoBehaviour
 {
+    
+    private float ipotionTimer;
     private float iframesTimer;
     private float iframesTimerDefault = 1.5f;
     private bool iframes = false;
@@ -18,7 +20,7 @@ public class HealthCode : MonoBehaviour
     {
         hud = GameObject.FindObjectOfType<HUD>();
         iframesTimer = iframesTimerDefault;
-   
+
     }
     
     
@@ -30,16 +32,28 @@ public class HealthCode : MonoBehaviour
             Destroy(other.gameObject);
 
         }
-        
+
+        if (other.gameObject.CompareTag("Turret Bullet"))
+        {
+            if(!iframes)
+            {
+                ChangeHealth((-1));
+                Destroy(other.gameObject);
+                iframes = true;
+            }
+        }
+
         if (other.gameObject.CompareTag("IPotion"))
         {
-            sssssss
+
+            iframesTimer = 10f;
+            iframes = true;
             Destroy(other.gameObject);
 
         }
     }
     
-
+    
 
     private void Update()
     {
@@ -53,6 +67,7 @@ public class HealthCode : MonoBehaviour
                 iframesTimer = iframesTimerDefault;
             }
         }
+
     }
 
     // Update is called once per frame
@@ -65,6 +80,8 @@ public class HealthCode : MonoBehaviour
                 ChangeHealth(-1);
                 iframes = true;
             }
+
+
 
             if (hud.health < 1)
             {

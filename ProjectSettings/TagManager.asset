@@ -10,6 +10,7 @@ TagManager:
   - Spikes
   - Potion
   - IPotion
+  - Turret Bullet
   layers:
   - Default
   - TransparentFX
