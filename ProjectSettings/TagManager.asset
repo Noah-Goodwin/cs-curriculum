@@ -11,6 +11,7 @@ TagManager:
   - Potion
   - IPotion
   - Turret Bullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
