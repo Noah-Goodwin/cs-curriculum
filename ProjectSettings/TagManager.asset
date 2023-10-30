@@ -12,6 +12,7 @@ TagManager:
   - IPotion
   - Turret Bullet
   - PlayerBullet
+  - wall
   layers:
   - Default
   - TransparentFX

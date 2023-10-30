@@ -16,6 +16,7 @@ public class Orc : MonoBehaviour
     private float iframesTimer;
     private float iframesTimerDefault = 1;
     private bool iframes = false;
+    private CircleCollider2D collider;
 
 
 // Start is called before the first frame update
@@ -23,15 +24,66 @@ public class Orc : MonoBehaviour
     {
         iframesTimer = iframesTimerDefault;
         OrcHealth = 5;
+        collider = gameObject.GetComponent<CircleCollider2D>();
+        collider.radius = 3;
+    }
+    
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (!iframes)
+            {
+                ChangeOrcHealth(-1);
+                iframes = true;
+            }
 
+            if (OrcHealth < 1)
+            {
+                Destroy(gameObject);
+            }
+            
+        }
+
+
+        void ChangeOrcHealth(int amount)
+        {
+            OrcHealth += amount;
+            Debug.Log("OrcHealth: " + OrcHealth);
+
+        }
 
     }
-
-    void OnTriggerStay2D(Collider2D other)
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            collider.radius = collider.radius + 1.3f;
             isInRange = true;
+        }
+            
+            void ChangeOrcHealth(int amount)
+            {
+                OrcHealth += amount;
+                Debug.Log("OrcHealth: " + OrcHealth);
+
+            }
+            if (other.gameObject.CompareTag("PlayerBullet"))
+            {
+                if (!iframes)
+                {
+                    ChangeOrcHealth(-1);
+                    iframes = true;
+                    collider.radius = collider.radius + 3;
+                }
+
+                if (OrcHealth < 1)
+                {
+                    Destroy(gameObject);
+                }
         }
     }
 
@@ -40,6 +92,7 @@ public class Orc : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = false;
+            collider.radius = 3;
         }
     }
 
@@ -68,32 +121,7 @@ public class Orc : MonoBehaviour
         }
 
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if (!iframes)
-            {
-                ChangeOrcHealth(-1);
-                iframes = true;
-            }
-
-            if (OrcHealth < 1)
-            {
-                Destroy(gameObject);
-            }
+    
 
 
-        }
-
-
-        void ChangeOrcHealth(int amount)
-        {
-            OrcHealth += amount;
-            Debug.Log("OrcHealth: " + OrcHealth);
-
-        }
-
-    }
 }

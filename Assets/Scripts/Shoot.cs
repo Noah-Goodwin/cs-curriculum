@@ -21,11 +21,16 @@ public class Shoot : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-            if (Input.GetKeyDown("space"))
+        }
+
+        if (timer<0)
+        {if (Input.GetKeyDown("space"))
             {
                 fire();
             }
+            
         }
+        
 
     }
 
