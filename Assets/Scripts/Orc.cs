@@ -27,11 +27,11 @@ public class Orc : MonoBehaviour
         collider = gameObject.GetComponent<CircleCollider2D>();
         collider.radius = 3;
     }
-    
-    
+
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
         if (collision.gameObject.CompareTag("Player"))
         {
             if (!iframes)
@@ -44,18 +44,38 @@ public class Orc : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-            
+
         }
 
-
-        void ChangeOrcHealth(int amount)
+        if (collision.gameObject.CompareTag("PlayerBullet"))
         {
-            OrcHealth += amount;
-            Debug.Log("OrcHealth: " + OrcHealth);
+            if (!iframes)
+            {
+                ChangeOrcHealth(-1);
+                iframes = true;
+                collider.radius = collider.radius + 3;
+            }
+            //collision.gameObject.SetActive(false);
+            Destroy(collision.gameObject);
 
         }
 
     }
+
+    void ChangeOrcHealth(int amount)
+        {
+            OrcHealth += amount;
+            Debug.Log("OrcHealth: " + OrcHealth);
+            if (OrcHealth < 1)
+            {
+                Destroy(gameObject);
+            }
+        }
+        
+        
+        
+
+    
     
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -65,26 +85,7 @@ public class Orc : MonoBehaviour
             isInRange = true;
         }
             
-            void ChangeOrcHealth(int amount)
-            {
-                OrcHealth += amount;
-                Debug.Log("OrcHealth: " + OrcHealth);
-
-            }
-            if (other.gameObject.CompareTag("PlayerBullet"))
-            {
-                if (!iframes)
-                {
-                    ChangeOrcHealth(-1);
-                    iframes = true;
-                    collider.radius = collider.radius + 3;
-                }
-
-                if (OrcHealth < 1)
-                {
-                    Destroy(gameObject);
-                }
-        }
+            
     }
 
     void OnTriggerExit2D(Collider2D other)

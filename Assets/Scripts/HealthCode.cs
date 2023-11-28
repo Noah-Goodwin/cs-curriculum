@@ -8,10 +8,12 @@ using UnityEngine.SceneManagement;
 public class HealthCode : MonoBehaviour
 {
 
+    public GameObject invincible;
+    public GameObject canvas;
     private float ipotionTimer;
     private float iframesTimer;
     private float iframesTimerDefault = 1.5f;
-    private bool iframes = false;
+    public bool iframes = false;
     public HUD hud;
 
 
@@ -40,6 +42,7 @@ public class HealthCode : MonoBehaviour
                 ChangeHealth((-1));
                 Destroy(other.gameObject);
                 iframes = true;
+                BecomeInvincible();
             }
         }
 
@@ -48,6 +51,7 @@ public class HealthCode : MonoBehaviour
 
             iframesTimer = 10f;
             iframes = true;
+            BecomeInvincible();
             Destroy(other.gameObject);
 
         }
@@ -79,6 +83,7 @@ public class HealthCode : MonoBehaviour
             {
                 ChangeHealth(-1);
                 iframes = true;
+                BecomeInvincible();
             }
 
 
@@ -96,6 +101,7 @@ public class HealthCode : MonoBehaviour
             {
                 ChangeHealth(-1);
                 iframes = true;
+                BecomeInvincible();
             }
 
 
@@ -128,4 +134,13 @@ public class HealthCode : MonoBehaviour
             Debug.Log("Health: " + hud.health);
 
         }
+        
+        void BecomeInvincible()
+        {
+            GameObject newSmoke = Instantiate(invincible, new Vector3(1001, 532, 0), Quaternion.Euler(0, 0, 0)) as GameObject;
+            newSmoke.transform.SetParent(canvas.transform, false);
+            newSmoke.transform.localScale = new Vector3(1, 1, 1);   
+            Debug.Log("script finished");
+        }
+        
     }
