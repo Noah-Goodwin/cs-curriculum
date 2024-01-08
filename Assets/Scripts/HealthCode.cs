@@ -11,7 +11,7 @@ public class HealthCode : MonoBehaviour
     public GameObject invincible;
     public GameObject canvas;
     private float ipotionTimer;
-    private float iframesTimer;
+    public float iframesTimer;
     private float iframesTimerDefault = 1.5f;
     public bool iframes = false;
     public HUD hud;
@@ -42,6 +42,7 @@ public class HealthCode : MonoBehaviour
                 ChangeHealth((-1));
                 Destroy(other.gameObject);
                 iframes = true;
+                iframesTimer = iframesTimerDefault;
                 BecomeInvincible();
             }
         }
@@ -68,7 +69,7 @@ public class HealthCode : MonoBehaviour
             {
                 iframes = false;
                 //reset the timer
-                iframesTimer = iframesTimerDefault;
+
             }
         }
 
@@ -83,6 +84,7 @@ public class HealthCode : MonoBehaviour
             {
                 ChangeHealth(-1);
                 iframes = true;
+                iframesTimer = iframesTimerDefault;
                 BecomeInvincible();
             }
 
@@ -101,6 +103,7 @@ public class HealthCode : MonoBehaviour
             {
                 ChangeHealth(-1);
                 iframes = true;
+                iframesTimer = iframesTimerDefault;
                 BecomeInvincible();
             }
 
@@ -110,11 +113,6 @@ public class HealthCode : MonoBehaviour
             {
                 Death();
             }
-
-
-
-
-
 
         }
         }

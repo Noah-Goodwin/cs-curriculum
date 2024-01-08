@@ -16,6 +16,8 @@ public class Orc : MonoBehaviour
     private float iframesTimer;
     private float iframesTimerDefault = 1;
     private bool iframes = false;
+    public GameObject Coin;
+    public Transform Orcpos;
     private CircleCollider2D collider;
 
 
@@ -43,6 +45,7 @@ public class Orc : MonoBehaviour
             if (OrcHealth < 1)
             {
                 Destroy(gameObject);
+                Instantiate(Coin, Orcpos.position, Orcpos.rotation);
             }
 
         }
@@ -58,6 +61,17 @@ public class Orc : MonoBehaviour
             //collision.gameObject.SetActive(false);
             Destroy(collision.gameObject);
 
+        }
+
+
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            if (!iframes)
+            {
+                ChangeOrcHealth(-1);
+                iframes = true;
+                collider.radius = collider.radius - 2;
+            }
         }
 
     }
