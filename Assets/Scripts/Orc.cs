@@ -19,6 +19,8 @@ public class Orc : MonoBehaviour
     public GameObject Coin;
     public Transform Orcpos;
     private CircleCollider2D collider;
+    private int Number;
+    public GameObject HealthSquare;
 
 
 // Start is called before the first frame update
@@ -44,8 +46,8 @@ public class Orc : MonoBehaviour
 
             if (OrcHealth < 1)
             {
-                Destroy(gameObject);
-                Instantiate(Coin, Orcpos.position, Orcpos.rotation);
+                Death();
+
             }
 
         }
@@ -82,9 +84,26 @@ public class Orc : MonoBehaviour
             Debug.Log("OrcHealth: " + OrcHealth);
             if (OrcHealth < 1)
             {
-                Destroy(gameObject);
+                Death();
             }
         }
+
+
+    void Death()
+    {
+        Number = UnityEngine.Random.Range(1, 3);
+        Debug.Log("test");
+        if (Number == 1)
+        {
+            Instantiate(HealthSquare, Orcpos.position, iposition.rotation);
+        }
+        else
+        {
+            Instantiate(Coin, Orcpos.position, iposition.rotation);
+        }
+
+        Destroy(gameObject);
+    }
         
         
         
