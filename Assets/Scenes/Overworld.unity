@@ -40813,8 +40813,9 @@ MonoBehaviour:
   isInRange: 0
   orctarget: {fileID: 1750497398}
   iposition: {fileID: 914976180}
-  Coin: {fileID: 703228634}
+  Coin: {fileID: 301796268}
   Orcpos: {fileID: 888600607}
+  HealthSquare: {fileID: 1108678449}
   orcSpeed: 4
 --- !u!58 &888600604
 CircleCollider2D:
@@ -85198,6 +85199,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 224400862}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1503210656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 412193026774026808, guid: 34448014912494d33b041af48acd0291,
+    type: 3}
+  m_PrefabInstance: {fileID: 1750497383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1572280894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281311786053241907, guid: 69c7343f050914c7787bbbe42c07b5b8,
@@ -85932,6 +85939,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 412193026774026815, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193026774026815, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.96788573
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193026774026815, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7137255
+      objectReference: {fileID: 0}
     - target: {fileID: 412193027009803667, guid: 34448014912494d33b041af48acd0291,
         type: 3}
       propertyPath: m_Name
@@ -86202,6 +86224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27c5d77f5358493794977c2d7ce23c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1503210656}
   Iframe: {fileID: 0}
   iframepot: 0
   iframescounter: 0
