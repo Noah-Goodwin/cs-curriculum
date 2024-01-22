@@ -13,6 +13,7 @@ TagManager:
   - Turret Bullet
   - PlayerBullet
   - wall
+  - Ground
   layers:
   - Default
   - TransparentFX
