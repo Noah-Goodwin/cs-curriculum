@@ -3227,17 +3227,17 @@ PrefabInstance:
     - target: {fileID: 1007222563776942056, guid: cddc0eae8679c4344b7e477729e7843b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1007222563776942056, guid: cddc0eae8679c4344b7e477729e7843b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1007222563776942056, guid: cddc0eae8679c4344b7e477729e7843b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1007222563776942056, guid: cddc0eae8679c4344b7e477729e7843b,
         type: 3}
@@ -3258,6 +3258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player_Shovel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386698514500486556, guid: cddc0eae8679c4344b7e477729e7843b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3287,8 +3292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Overworld: 0
-  rb: {fileID: 0}
-  characters: {fileID: 0}
 --- !u!1 &1984272032
 GameObject:
   m_ObjectHideFlags: 0
