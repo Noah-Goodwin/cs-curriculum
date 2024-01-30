@@ -15,13 +15,20 @@ public class HealthCode : MonoBehaviour
     private float iframesTimerDefault = 1.5f;
     public bool iframes = false;
     public HUD hud;
+    private float m_Red;
+    private float m_Blue;
+    float m_Green;
+    private int changy;
+    public GameObject player;
+    SpriteRenderer m_SpriteRenderer;
 
 
     // Start is called before the first frame update
     void Start()
     {
         hud = GameObject.FindObjectOfType<HUD>();
-        iframesTimer = iframesTimerDefault;
+        //iframesTimer = iframesTimerDefault;
+        m_SpriteRenderer = player.GetComponent<SpriteRenderer>();
 
     }
 
@@ -54,6 +61,7 @@ public class HealthCode : MonoBehaviour
             iframes = true;
             BecomeInvincible();
             Destroy(other.gameObject);
+            hud.ColorReset();
 
         }
     }
@@ -74,6 +82,36 @@ public class HealthCode : MonoBehaviour
         }
 
     }
+    
+    void ChangeHealth(int amount)
+    {
+        hud.health += amount;
+        Debug.Log("Health: " + hud.health);
+        if (hud.health < 1)
+        {
+            Death();
+        }
+            
+        if (amount < 0)
+        {
+            hud.ColorReset();
+            StartCoroutine(ChangeColorCoroutine());
+
+
+        }
+
+    }
+    IEnumerator ChangeColorCoroutine()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            m_SpriteRenderer.color = Color.black;
+            yield return new WaitForSeconds(.1f); // Adjust the duration as needed
+
+            hud.ColorReset();
+            yield return new WaitForSeconds(.1f); // Adjust the duration as needed
+        }
+    }
 
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D collision)
@@ -91,10 +129,7 @@ public class HealthCode : MonoBehaviour
 
 
 
-            if (hud.health < 1)
-            {
-                Death();
-            }
+
         }
         
         if (collision.gameObject.CompareTag("Spikes"))
@@ -109,29 +144,26 @@ public class HealthCode : MonoBehaviour
 
 
 
-            if (hud.health < 1)
-            {
-                Death();
-            }
+
 
         }
         }
+    
+
 
         void Death()
         {
             hud.coins = 0;
             hud.health = 10;
             SceneManager.LoadScene("Start", LoadSceneMode.Single);
+            
+            
+            
         }
 
 
 
-        void ChangeHealth(int amount)
-        {
-            hud.health += amount;
-            Debug.Log("Health: " + hud.health);
 
-        }
         
         void BecomeInvincible()
         {

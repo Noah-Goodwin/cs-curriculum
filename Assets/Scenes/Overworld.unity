@@ -86246,8 +86246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Overworld: 1
-  rb: {fileID: 0}
-  character: {fileID: 0}
 --- !u!114 &1750497391
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ TagManager:
   - wall
   - Ground
   - character
+  - PlayerSprite
   layers:
   - Default
   - TransparentFX
