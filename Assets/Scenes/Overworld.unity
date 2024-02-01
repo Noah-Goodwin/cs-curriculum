@@ -86132,6 +86132,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 412193026774026808, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerSprite
+      objectReference: {fileID: 0}
     - target: {fileID: 412193026774026815, guid: 34448014912494d33b041af48acd0291,
         type: 3}
       propertyPath: m_Color.b
@@ -86258,12 +86263,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f429a3776c442f994097e4c6e7fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincible: {fileID: 7933742752596976401, guid: 9e001144ed36a4c4fb89ed5c56b1a66f,
-    type: 3}
   canvas: {fileID: 1762966601}
   iframesTimer: 0
   iframes: 0
   hud: {fileID: 0}
+  player: {fileID: 1503210656}
 --- !u!114 &1750497395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86418,14 +86422,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1503210656}
+  m_SpriteRenderer: {fileID: 0}
   Iframe: {fileID: 0}
   iframepot: 0
+  initialhealth: 0
+  health: 10
+  coins: 0
   iframescounter: 0
   coinText: {fileID: 270879649}
-  healthText: {fileID: 1257627689}
   Iframes: {fileID: 110028344}
-  coins: 0
-  health: 10
+  healthText: {fileID: 1257627689}
 --- !u!4 &1825907749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281311786053241907, guid: 69c7343f050914c7787bbbe42c07b5b8,
