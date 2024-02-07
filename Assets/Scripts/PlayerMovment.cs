@@ -95,19 +95,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
  
-    private void OnCollisionEnter2D(Collision2D collider)
-    {
-        // allow jumping again
-        canJump = true;
-        //player.transform.tag = "onFloor";
-        
-    }
-    private void OnCollisionExit2D(Collision2D collider)
-    {
-        //player.transform.tag = "Jumping";
-        shouldJump = false;
-        
-    }
+
 
     private void jTimerReset()
     {
