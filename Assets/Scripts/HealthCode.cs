@@ -136,7 +136,7 @@ public class HealthCode : MonoBehaviour
         {
             if (!iframes)
             {
-                ChangeHealth(-1);
+                ChangeHealth(-20);
                 iframes = true;
                 iframesTimer = iframesTimerDefault;
   
