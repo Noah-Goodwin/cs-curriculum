@@ -167,10 +167,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 58
+        width: 81
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.390625}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,12 +186,12 @@ TextureImporter:
       name: ALever_1
       rect:
         serializedVersion: 2
-        x: 82
+        x: 81
         y: 0
-        width: 78
-        height: 48
-      alignment: 9
-      pivot: {x: 0.6282051, y: 0.5208334}
+        width: 81
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
