@@ -16,6 +16,7 @@ TagManager:
   - Ground
   - character
   - PlayerSprite
+  - Boss
   layers:
   - Default
   - TransparentFX
