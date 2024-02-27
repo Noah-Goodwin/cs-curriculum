@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject player;
     private float jTimer;
-    public float speed = 5f;
+    public float speed = 6f;
     
     public bool jTimerRunning;
     // Start is called before the first frame update

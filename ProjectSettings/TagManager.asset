@@ -17,6 +17,7 @@ TagManager:
   - character
   - PlayerSprite
   - Boss
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
